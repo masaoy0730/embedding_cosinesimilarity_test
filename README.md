@@ -51,8 +51,8 @@ uri、キーなどを使います。
 プログラムは[embedding.py](./embedding.py)をご覧ください。<br>
 コードで苦労したところをメモします。
 
-### 4-1.openaiのライプラリの読み込み
-`imprt openai`ではエラーになったので、下記にします。
+### 4-1.openaiのライブラリの読み込み
+`import openai`ではエラーになったので、下記にします。
 ```
 from openai import AzureOpenAI
 ```
