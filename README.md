@@ -38,7 +38,7 @@ source bin/activate
 
 ### 1.必要なモジュールをインストール
 openaiのモジュールをインストールします。<br>
-類似度計算でcosineやベクトルの内積を計算するのでnumpyも必要です。
+類似度計算でベクトルの計算をするのでnumpyも必要です。
 ```bash
 pip install openai numpy
 ```
