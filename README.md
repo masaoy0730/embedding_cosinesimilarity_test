@@ -56,7 +56,7 @@ uri、キーなどを使います。
 from openai import AzureOpenAI
 ```
 ### 3-2.クライアント作成
-Azure AI Foundryでモデルをデプロイした画面から、ターゲットURIを参照し、エンドポイントとバージョン、apiキーを記載します。
+Azure AI Foundryでモデルをデプロイした画面から、ターゲットURIを参照し、エンドポイントとバージョン、apiキーを記載します。バージョンは、最初はAzure AI Foundryを見て1と入れていましたがエラーになったので、ターゲットURIに書かれているバージョンを記載したところ通りました。
 ```
 client = AzureOpenAI(azure_endpoint="https://<ターゲットURI参照>.openai.azure.com",
 api_version="<バージョン>",
