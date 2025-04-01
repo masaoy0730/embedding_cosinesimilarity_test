@@ -1,16 +1,14 @@
 from openai import AzureOpenAI
+# クライアント作成
+client = AzureOpenAI(azure_endpoint="https://<ターゲットURI参照>.openai.azure.com",
+api_version="<バージョン>",
+api_key="<apiキー>")
 
-client = AzureOpenAI(azure_endpoint="https://<domain name>.openai.azure.com",
-api_version="2023-05-15",
-api_key="<api key>")
+# Embeddingモデルを指定
+model_id = "text-embedding-3-large" #利用するモデル名
+
+# コサインや内積の計算のために必要
 import numpy as np
-model_id = "text-embedding-3-large"
-# model_id = "text-embedding-3-small"
-
-# 1. Azure OpenAI Serviceの設定
-  # エンドポイントURL
-  # APIバージョン
-  # APIキー
 
 # 2. テスト用の文章
 texts = [
@@ -24,7 +22,7 @@ labels = ["プロンプト", "候補1", "候補2"]
 
 # 3. 埋め込みベクトルの生成関数
 def get_embedding(text):
-    response = client.embeddings.create(input=[text],model=model_id)
+    response = client.embeddings.create(input=[text],model = model_id)
     return response.data[0].embedding
 
 # 各文章の埋め込みベクトルを取得
@@ -49,3 +47,4 @@ for label, text in zip(labels, texts):
 
 print(f"\nSimilarity between プロンプト and 候補1: {similarity_1_2:.4f}")
 print(f"Similarity between プロンプト and 候補2: {similarity_1_3:.4f}")
+print(f"モデル:{model_id}")
