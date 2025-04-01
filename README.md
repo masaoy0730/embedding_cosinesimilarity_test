@@ -58,10 +58,11 @@ from openai import AzureOpenAI
 ```
 ### 4-2.クライアント作成
 Azure AI Foundryでモデルをデプロイした画面から、ターゲットURIを参照し、エンドポイントとバージョン、apiキーを記載します。
+```
 client = AzureOpenAI(azure_endpoint="https://<ターゲットURI参照>.openai.azure.com",
 api_version="<バージョン>",
 api_key="<apiキー>")
-
+```
 ### 4-3. Embeddingモデルを指定
 deployment_idでの指定がうまくいかなかったので、`model_id`にモデル名を入力することで通りました。
 ```
