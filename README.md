@@ -1,4 +1,4 @@
-# embedding_cosinesimilarity_test
+# embedding_cosine_similarity_test
 RAGの実験のために、ベクトル化とコサイン類似度のテストをしました。<br>
 
 サンプルの文書をベクトル化し、コサイン類似度を計算するということをテストしました。<br>
