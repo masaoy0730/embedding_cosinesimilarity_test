@@ -2,7 +2,7 @@
 RAGの実験のために、ベクトル化とコサイン類似度の計算をテストしました。<br>
 
 サンプルの文書をベクトル化し、コサイン類似度を計算するテストです。<br>
-pythonを使っています。EmbeddingのモデルはAzure OpenAI Serviceのtext-embedding-3-largeとtext-embedding-3-smallです。<br>
+Pythonを使っています。EmbeddingのモデルはAzure OpenAI Serviceのtext-embedding-3-largeとtext-embedding-3-smallです。<br>
 PythonのOpenAIのAPIを使うためのライブラリが新しくなっており、関数や引数の名前で少し苦労したので、メモを残します。<br>
 openaiのライブラリはVersion: 1.70.0です。
 
