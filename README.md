@@ -48,7 +48,7 @@ Azur PortalからAzure AI Foundryを開き、text-embedding-3-largeとtext-embed
 uri、キーなどを使います。
 
 ## 4.サンプルプログラムの作成
-プログラムはebmedding.py[./ebmedding.py]をご覧ください。<br>
+プログラムは(ebmedding.py)[./ebmedding.py]をご覧ください。<br>
 コードで苦労したところをメモします。
 
 ### 4-1.openaiのライプラリの読み込み
