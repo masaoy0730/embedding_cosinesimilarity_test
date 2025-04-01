@@ -81,7 +81,6 @@ embedding.pyの実行後の出力例です。
 ```
 Similarity between プロンプト and 候補1: 0.5854
 Similarity between プロンプト and 候補2: 0.6143
-モデル:text-embedding-3-large
 ```
 
 ## 6.比較
