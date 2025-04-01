@@ -1,0 +1,2 @@
+# embedding_cosinesimilarity_test
+RAGの実験のために、ベクトル化とコサイン類似度のテストをします。
