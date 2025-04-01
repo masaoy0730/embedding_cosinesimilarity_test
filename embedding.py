@@ -1,7 +1,7 @@
 from openai import AzureOpenAI
 # クライアント作成
 client = AzureOpenAI(azure_endpoint="https://<ターゲットURI参照>.openai.azure.com",
-api_version="<バージョン>",
+api_version="<バージョン>", #ターゲットURIに記載されているバージョンを入力
 api_key="<apiキー>")
 
 # Embeddingモデルを指定
