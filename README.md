@@ -38,4 +38,24 @@ Azur PortalからAzure AI Foundryを開き、text-embedding-3-largeとtext-embed
 uri、キーなどを使います。
 
 ## 4.サンプルプログラムの作成
+プログラムはebmedding.py[./ebmedding.py]をご覧ください。<br>
+コードで苦労したところをメモします。
+
+1.ライブラリの指定
+`import openai`ではエラーになったので、下記にする必要がありました。
+```
+from openai import AzureOpenAI
+```
+
+2.モデルのバージョン指定
+`api_version="1"`だとエラーになっているようだったので、uriに記載のバージョンをつかようにしました。
+```
+api_version="2023-05-15"
+```
+
+3.モデルの指定
+`deployment_id="text-embedding-3-large"`だとエラーになったので、下記で宣言するようにしました。
+```
+model_id = "text-embedding-3-large"
+```
 
