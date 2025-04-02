@@ -1,1 +1,13 @@
 
+sequenceDiagram
+    participant 工場 as 工場
+    participant 計測機器 as 計測機器
+    participant 電源コンセント as 電源コンセント
+    participant 火災 as 火災
+    participant 従業員 as 従業員
+
+    工場->>計測機器: 計測機器を設置
+    計測機器->>電源コンセント: 電源接続
+    電源コンセント->>火災: トラッキング現象発生
+    火災->>従業員: 室内全焼
+    従業員->>工場: 緊急点検及び清掃実施
