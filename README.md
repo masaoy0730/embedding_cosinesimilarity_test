@@ -44,12 +44,12 @@ openaiのモジュールをインストールします。<br>
 pip install openai numpy
 ```
 ## 2. Azure OpenAI ServiceでAPIを用意
-Azure PortalからAzure AI Foundryを開き、text-embedding-3-largeとtext-embedding-3-smallをデプロイします。<br>
+Azure PortalでAzure OpenAI Serviceのリソースを作成し、text-embedding-3-largeとtext-embedding-3-smallをデプロイします。<br>
 uri、キーなどを使います。
 
 ## 3.サンプルプログラムの作成
 プログラムは[embedding.py](./embedding.py)をご覧ください。<br>
-コードで苦労したところをメモします。
+コードで引っかかったところをメモします。
 
 ### 3-1.openaiのライブラリの読み込み
 `import openai`ではエラーになったので、下記にします。
@@ -57,20 +57,19 @@ uri、キーなどを使います。
 from openai import AzureOpenAI
 ```
 ### 3-2.クライアント作成
-Azure AI Foundryでモデルをデプロイした画面から、ターゲットURIを参照し、エンドポイントとバージョン、apiキーを記載します。バージョンは、最初はAzure AI Foundryを見て1と入れていましたがエラーになったので、ターゲットURIに書かれているバージョンを記載したところ通りました。
+Azure AI Foundryでモデルをデプロイした画面から、ターゲットURIを参照し、エンドポイントとバージョン、apiキーを記載します。バージョンは、最初はAzure AI Foundryのモデルの情報の画面を見て1と入れていましたがエラーになったので、ターゲットURIに書かれているバージョンを記載したところ通りました。
 ```
 client = AzureOpenAI(azure_endpoint="https://<ターゲットURI参照>.openai.azure.com",
 api_version="<バージョン>",
 api_key="<apiキー>")
 ```
 ### 3-3. Embeddingモデルを指定
-deployment_idでの指定がうまくいかなかったので、`model_id`にモデル名を入力することで通りました。
+`deployment_id`で指定したところエラーが出たので、`model_id`を変数にしてモデル名を入力し、`model`に指定することで通りました。
 ```
 model_id = "text-embedding-3-large" #利用するモデル名
 ```
-
 ### 3-4. 埋め込みベクトルの生成関数
-作成したclientを使うようにします。
+作成したclientを使うようにします。`model`には`model_id`を指定します。
 ```
 def get_embedding(text):
     response = client.embeddings.create(input=[text],model = model_id)
@@ -78,7 +77,7 @@ def get_embedding(text):
 ```
 
 ## 4.出力例
-embedding.pyの実行後の出力例です。
+作成したembedding.pyを実行した出力例です。
 ```
 Similarity between プロンプト and 候補1: 0.5854
 Similarity between プロンプト and 候補2: 0.6143
