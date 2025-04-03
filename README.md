@@ -14,7 +14,7 @@ text-embedding-3-largeを使った時、コサイン類似度を計算すると�
 |プロンプト|候補2|0.6076|
 
 プロンプト、および、類似度を計算した文書は下記です。<br>
-OpenAIのtokenizerで計算したトークン数も記載します。[https://platform.openai.com/tokenizer]
+OpenAIの[tokenizer](https://platform.openai.com/tokenizer)で計算したトークン数も記載します。
 
 |種類|内容|
 |:--|:---|
