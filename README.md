@@ -39,9 +39,10 @@ source bin/activate
 
 ## 1.必要なモジュールをインストール
 openaiのモジュールをインストールします。<br>
-類似度計算でベクトルの計算をするのでnumpyも必要です。
+類似度計算でベクトルの計算をするのでnumpyも必要です。<br>
+apiキーやエンドポイントは.envファイルに記述するのでpython-dotenvもインストールします。
 ```bash
-pip install openai numpy
+pip install openai numpy python-dotenv
 ```
 ## 2. Azure OpenAI ServiceでAPIを用意
 Azure PortalでAzure OpenAI Serviceのリソースを作成し、text-embedding-3-largeとtext-embedding-3-smallをデプロイします。<br>
@@ -63,6 +64,8 @@ client = AzureOpenAI(azure_endpoint="https://<ターゲットURI参照>.openai.a
 api_version="<バージョン>",
 api_key="<apiキー>")
 ```
+実際には、エンドポイントとapiキーはコードには記述せず、.envファイルに書き込み、読み込むようにします。
+
 ### 3-3. Embeddingモデルを指定
 `deployment_id`で指定したところエラーが出たので、`model_id`を変数にしてモデル名を入力し、`model`に指定することで通りました。
 ```
